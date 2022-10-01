@@ -4,7 +4,7 @@ import Vector from './vector';
 
 class somTrainer {
 	// These constants can be changed to play with the learning algorithm
-	private static START_LEARNING_RATE = 0.07;
+	private static START_LEARNING_RATE = 0.07; // 0.07
 	private static NUM_ITERATIONS = 500;
 	
 	// These two depend on the size of the lattice, so are set later
@@ -100,13 +100,12 @@ class somTrainer {
             console.log(x,y)
             console.error(err);
           }
-          }
-        // }
+        }
       }
     }
     iteration++;
     learningRate = somTrainer.START_LEARNING_RATE * Math.exp(-iteration/somTrainer.NUM_ITERATIONS);
-    console.log(iteration, this.lattice);
+    // console.log(iteration, this.lattice);
     // update GUI
     this.setLoad(iteration%2===0);
     // this.setState(this.lattice);

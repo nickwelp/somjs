@@ -55,7 +55,7 @@ const Lattice = ({height=0, width=0}) => {
   trainerVectors[7][0] = 0.5;
   trainerVectors[7][1] = 0.5;
   trainerVectors[7][2] = 0.5;
-  console.log(trainerVectors);
+  // console.log(trainerVectors);
  
   const [somTrainer, replaceSOMTrainer] = useState(new SOMTrainer(
     latticeState,
