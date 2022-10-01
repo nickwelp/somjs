@@ -18,7 +18,7 @@ const Lattice = ({height=0, width=0}) => {
     console.log('updating lattice state', a);
     setLatticeState(a);
   }
-  const trainerDataLength = 8;
+  const trainerDataLength = 9;
   const trainerVectors = new Array(trainerDataLength);
   for(let i = 0; i<trainerDataLength; i ++){
     trainerVectors[i] = new Vector(3);
@@ -55,6 +55,10 @@ const Lattice = ({height=0, width=0}) => {
   trainerVectors[7][0] = 0.5;
   trainerVectors[7][1] = 0.5;
   trainerVectors[7][2] = 0.5;
+  // green
+  trainerVectors[8][0] = 0;
+  trainerVectors[8][1] = 1;
+  trainerVectors[8][2] = 0;
   // console.log(trainerVectors);
  
   const [somTrainer, replaceSOMTrainer] = useState(new SOMTrainer(
