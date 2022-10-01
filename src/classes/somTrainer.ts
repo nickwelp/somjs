@@ -18,6 +18,7 @@ class somTrainer {
   private iteration = 0;
   private setState: Function;
   private setLoad: Function;
+  private timeoutManager: any;
 	
 	/** Creates a new instance of SOMTrainer */
 	constructor(lat:SOMLattice, input:Vector[], setState: Function, setLoad: Function) {
@@ -48,11 +49,15 @@ class somTrainer {
     console.log('starting training on random field');
 		if (this.lattice !== undefined) {
 			this.running = true;
-
-			while(this.iteration<somTrainer.NUM_ITERATIONS){
-        this.run(this.iteration);
-        this.iteration++;
-      }
+      this.timeoutManager = setInterval(() => {
+        if(this.iteration>somTrainer.NUM_ITERATIONS) {
+          clearTimeout(this.timeoutManager);
+        } else {
+          this.iteration++;
+          this.run(this.iteration);
+        }
+      }, 0);
+      this.run(this.iteration);
       this.running = false;
 		}
 	}
