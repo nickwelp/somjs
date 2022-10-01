@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.cell {
+  width: 20px;
+  height: 20px;
+}
+.latticeBody {
+  min-width: 1000px;
+  min-height: 1000px;
+  background-color: #FF0000;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+}
