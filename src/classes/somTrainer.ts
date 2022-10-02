@@ -110,10 +110,8 @@ class somTrainer {
     }
     iteration++;
     learningRate = somTrainer.START_LEARNING_RATE * Math.exp(-iteration/somTrainer.NUM_ITERATIONS);
-    // console.log(iteration, this.lattice);
     // update GUI
     this.setLoad(iteration%2===0);
-    // this.setState(this.lattice);
 	}
 
 	public stop() {

@@ -117,8 +117,6 @@ const Lattice = ({height=0, width=0}) => {
       </div>
       <div className="controls">
         <p onClick={()=> somTrainer.start()}>RUN</p>
-        {toggleLoad && <p onClick={()=>setToggleLoad(!toggleLoad)}>Toggle Load</p>}
-        {!toggleLoad && <p onClick={()=>setToggleLoad(!toggleLoad)}>Toggle Load</p>}
       </div>
     </div>
   );
