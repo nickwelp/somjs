@@ -12,6 +12,8 @@ This takes the random field, here represented as the random distribution of RGB 
 
 The SOM is only as effective as the training data. Right now it trains on 8 RGB values. Pure RGB Red, Yellow, Green, Cyan, Blue, Violet, white, black and gray. My 'pure rgb' I mean, `rgb(255,0,0)` for red or `rgb(0,255,255)` for green. The matrix of the SOM is initialized with random numbers, so the matrxix has node elements that are vectors, which are an array of floats valued 0-1, values like [0.1, 0.2, 0.3 ] which will be multiplied by 255 for the color representation. 
 
+See this repo live at https://nickwelp.github.io/somjs/
+
 Special thanks to this C++ project from AI-Junkie:
 //  Name:  SOMDemo (part one)
 //
