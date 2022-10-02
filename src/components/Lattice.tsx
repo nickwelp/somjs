@@ -18,7 +18,8 @@ const Lattice = ({height=0, width=0}) => {
       return parseInt(hex, 16)/0xFF;
   };
   const batteryOfColors:string[] = [
-    "f2003c", //munsell red
+    "f2003c", //munsell red 
+    "ff0000", //rgb red 
     "efcc00", // munsell yellow
     "00a877", // munsell green
     "0093af", // munsell blue
@@ -26,6 +27,8 @@ const Lattice = ({height=0, width=0}) => {
     "000000", // black
     "FFFFFF", // white
     "8888888", // middle gray
+    // "240,8,60", // also munsel red
+    "147,4,217", // also munsel purple
   ];
 
   const updateLatticeState = (a:SOMLattice) => {
@@ -36,9 +39,16 @@ const Lattice = ({height=0, width=0}) => {
   const trainerVectors = new Array(batteryOfColors.length);
   for(let i = 0; i<batteryOfColors.length; i ++){
     trainerVectors[i] = new Vector(3);
-    trainerVectors[i][0] = hexTo01(`${batteryOfColors[i][0]}${batteryOfColors[i][1]}`);
-    trainerVectors[i][1] = hexTo01(`${batteryOfColors[i][2]}${batteryOfColors[i][3]}`);
-    trainerVectors[i][2] = hexTo01(`${batteryOfColors[i][4]}${batteryOfColors[i][5]}`);
+    if(trainerVectors[i].includes(',')) {
+      const tmp = trainerVectors[i].split(',');
+      trainerVectors[i][0] = parseInt(tmp[0],10)/255;
+      trainerVectors[i][1] = parseInt(tmp[1],10)/255;
+      trainerVectors[i][2] = parseInt(tmp[2],10)/255;
+    } else {
+      trainerVectors[i][0] = hexTo01(`${batteryOfColors[i][0]}${batteryOfColors[i][1]}`);
+      trainerVectors[i][1] = hexTo01(`${batteryOfColors[i][2]}${batteryOfColors[i][3]}`);
+      trainerVectors[i][2] = hexTo01(`${batteryOfColors[i][4]}${batteryOfColors[i][5]}`);
+    }
   }
 
 
