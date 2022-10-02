@@ -21,7 +21,7 @@ function App() {
             //  Author:Mat Buckland 2002 (fup@ai-junkie.com)
 and the JAVA version of that project from 
           // @author  alanter
-http://www.ai-junkie.com/ann/som/som1.html          
+http://www.ai-junkie.com/ann/som/som1.html  
           `}
 
           </pre>
