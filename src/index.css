@@ -17,8 +17,9 @@ code {
   height: 20px;
 }
 .latticeBody {
-  min-width: 1000px;
-  min-height: 1000px;
+  padding: 4px;
+  /* min-width: 1000px;
+  min-height: 1000px; */
   background-color: #FFFFFF;
 }
 
