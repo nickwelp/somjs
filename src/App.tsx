@@ -11,6 +11,7 @@ function App() {
       <header className="App-header">
         <h1>SOM JS</h1>
         <p><pre>{`Special thanks to this C++ project from AI-Junkie:
+            //  Kohonen's Self Organizing Feature Maps
             //  Name:  SOMDemo (part one)
             //
             //  Desc:  Code to accompany part one of the SOM tutorial found at  
