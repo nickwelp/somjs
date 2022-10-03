@@ -106,7 +106,6 @@ const Lattice = ({height=0, width=0}) => {
   const [somTrainer, replaceSOMTrainer] = useState(new SOMTrainer(
     latticeState,
     trainerVectors,
-    updateLatticeState,
     setToggleLoad
   ));
 

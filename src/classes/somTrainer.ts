@@ -16,16 +16,19 @@ class somTrainer {
 	private running:boolean = false;
   // private running = false;
   private iteration = 0;
-  private setState: Function;
   private setLoad: Function;
   private timeoutManager: any;
 	
 	/** Creates a new instance of SOMTrainer */
-	constructor(lat:SOMLattice, input:Vector[], setState: Function, setLoad: Function) {
+	constructor(lat:SOMLattice, input:Vector[], setLoad: Function) {
     this.lattice = lat;
 		this.running = false;
     this.inputs = input;
-    this.setState = setState;
+    // set load is used to trigger react to re-render.
+    // the SOM was passed to React by reference, and the SOM Trainer updates it
+    // react only attends to changes in memory address for state updates when 
+    // the state value is an object
+    // so its easier to alternate booleans with setLoad
     this.setLoad = setLoad;
     // These two values are used in the training algorithm
 		this.LATTICE_RADIUS = Math.max(this.lattice.getWidth(), this.lattice.getHeight())/2;
@@ -49,6 +52,10 @@ class somTrainer {
     console.log('starting training on random field');
 		if (this.lattice !== undefined) {
 			this.running = true;
+      // with react + js, it helps us to tell the system to run this algorithm 
+      // at the end of the js stack (in the context of the js event loop) 
+      // so that it renders in a pleasing manner in our gui
+      // hence the use of timeouts or intervals with a 0 time value
       this.timeoutManager = setInterval(() => {
         if(this.iteration>somTrainer.NUM_ITERATIONS) {
           clearTimeout(this.timeoutManager);
