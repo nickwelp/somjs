@@ -17,9 +17,31 @@ code {
   height: 20px;
 }
 .latticeBody {
-  min-width: 1000px;
-  min-height: 1000px;
+  padding: 4px;
+  /* min-width: 1000px;
+  min-height: 1000px; */
   background-color: #FFFFFF;
+}
+.controls{
+  cursor: pointer;
+  background: #cacaca;
+  padding: 5px;
+  border-radius: 3px;
+  border:2px solid #dadada;
+  border-right: 5px solid #8a8a8a;
+  border-top: 5px solid #8a8a8a;
+  width: 200px;
+  margin: 20px 20px 100px 100px;
+  text-align: center;
+}
+.controls:hover{
+  background: #9a9a9a;
+  padding: 5px;
+  border-radius: 3px;
+  border:2px solid #dadada;
+  border-left: 5px solid #8a8a8a;
+  border-bottom: 5px solid #8a8a8a;
+  
 }
 
 .row {
