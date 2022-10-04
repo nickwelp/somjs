@@ -1,4 +1,4 @@
-const mText = /*`e9e8e7
+const mText =/*`e9e8e7
 f2e2e2
 ffdada
 ffd3d2
@@ -1978,12 +1978,12 @@ bc1756
 412c32
 4c2533
 551e34
-5f1036
+*/
+`5f1036
 222221
 2c1620
 350f23
-*/
-`dddddd
+dddddd
 000000
 222222
 444444
@@ -2033,5 +2033,5 @@ ff04ac
 ff2896
 ff417f`;
 
-const munselColors = mText.split('\n');
+const munselColors = mText; //.split('\n');
 export default munselColors;

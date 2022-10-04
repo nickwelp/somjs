@@ -50,7 +50,7 @@ code {
 }
 .row-wrap{
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
 }
 .swatch {
   width:20px; height:20px; margin: 2px;

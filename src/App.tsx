@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import './App.css';
 import AppContext from './Context';
 import Lattice from './components/Lattice';
+import munselColors from './trainingData/munselColors';
 
 function App() {
 
   const [latticeData, setLatticeData] = useState();
+  const [batteryOfColors, updateBatterOfColors] = useState(munselColors);
   return (
     <div className="App">
       <header className="App-header">
@@ -23,12 +25,24 @@ function App() {
           Author:Mat Buckland 2002 (fup@ai-junkie.com)<br />
       and the JAVA version of that project from <br />
       @author  alanter<br />
-      http://www.ai-junkie.com/ann/som/som1.html<br /></p>
+      http://www.ai-junkie.com/ann/som/som1.html<br />  </p>
 </blockquote>
 
       </header>
       <AppContext.Provider value={{latticeData, setLatticeData}}>
-        <Lattice height={50} width={50} />
+        <p>You can change the swatched by inputing Hexcodes of color below</p>
+        <textarea id="batteryOfColors">
+          {batteryOfColors}
+        </textarea>
+        <button onClick={()=> {
+          const t = document.getElementById('batteryOfColors');
+          if(t) {
+            // @ts-expect-error
+            const colors = t.value.trim();
+            updateBatterOfColors(colors);
+          }
+        }}>Update Colors</button>
+        <Lattice height={50} width={50} batteryOfColors={batteryOfColors} />
       </AppContext.Provider>
     </div>
   );
